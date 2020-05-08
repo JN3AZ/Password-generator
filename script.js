@@ -6,6 +6,7 @@ const lowercaseEl = document.getElementById('lowercase');
 const numbersEl = document.getElementById('numbers');
 const symbolsEl = document.getElementById('symbols');
 const generateEl = document.getElementById('generate');
+const clipboardEl = document.getElementById('clipboard');
 
 const randomFunc = {
    lower: getRandomLower,
@@ -13,6 +14,17 @@ const randomFunc = {
    number: getRandomNumber,
    symbol: getRandomSymbol,
 };
+
+generateEl.addEventListener('click', () => {
+  const length = +lengthEl.value;
+  const hasUpper = uppercaseEl.checked;
+  const hasLower = lowercaseEl.checked;
+  const hasNumber = numbersEl.checked;
+  const hasSymbol = symbolsEl.checked;
+
+  console.log(hasLower, hasUpper, hasNumber, hasSymbol);
+});
+
 
 // Generator functions   -http://www.net-comber.com/charset.html
 
